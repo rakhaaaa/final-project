@@ -1,8 +1,9 @@
 streamlit
 streamlit-webrtc
-deepface==0.0.79
+opencv-python-headless
 tensorflow==2.12.0
-protobuf==3.20.3
-opencv-python
-pillow
+deepface
+Pillow
+numpy
 pandas
+matplotlib
