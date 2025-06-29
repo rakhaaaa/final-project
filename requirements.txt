@@ -1,0 +1,7 @@
+streamlit
+streamlit-webrtc
+deepface
+opencv-python
+pillow
+numpy
+pandas

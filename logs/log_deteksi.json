@@ -1,0 +1,50 @@
+import json
+import pandas as pd
+from datetime
+import datetime
+
+# Lokasi file log JSON dan CSV
+JSON_LOG_FILE = "logs/log_deteksi.json"
+CSV_LOG_FILE = "logs/face_analysis_log.csv"
+
+#
+Baca file JSON
+with open(JSON_LOG_FILE, "r", encoding = "utf-8") as f:
+    data = json.load(f)
+
+# Ambil timestamp & data wajah
+timestamp = data.get("timestamp", datetime.now().strftime("%Y-%m-%d %H:%M:%S"))
+hasil = data.get("hasil", [])
+
+# Ambil data wajah(jika ada)
+rows = []
+for wajah in hasil:
+    usia = wajah.get("usia", "")
+gender_data = wajah.get("gender", {})
+gender = max(gender_data, key = gender_data.get) if gender_data
+else ""
+ras = wajah.get("ras", "")
+emosi = wajah.get("emosi", "")
+
+rows.append({
+    "Waktu": timestamp,
+    "Emosi": emosi,
+    "Kepercayaan Emosi": "",
+    #Tidak tersedia di JSON,
+    bisa dikosongkan "Usia": usia,
+    "Gender": gender,
+    "Ras": ras
+})
+
+# Buat DataFrame
+df = pd.DataFrame(rows, columns = ["Waktu", "Emosi", "Kepercayaan Emosi", "Usia", "Gender", "Ras"])
+
+# Simpan ke CSV(append jika sudah ada)
+if not df.empty:
+    try:
+    df.to_csv(CSV_LOG_FILE, mode = "a", header = not pd.io.common.file_exists(CSV_LOG_FILE), index = False)
+print("✅ Data berhasil ditambahkan ke face_analysis_log.csv")
+except Exception as e:
+    print("❌ Gagal menyimpan:", e)
+else :
+    print("⚠️ Tidak ada wajah terdeteksi dalam JSON.")
