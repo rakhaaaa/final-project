@@ -10,7 +10,7 @@ from streamlit_webrtc import webrtc_streamer, VideoTransformerBase
 import av
 
 # ===== PAGE CONFIGURATION =====
-st.set_page_config(page_title="Face Emotion & Identity Analyzer", layout="wide", page_icon="😄")
+st.set_page_config(page_title="Face Emotion & Identity Analyzer", layout="wide", page_icon="🎭")
 st.markdown("""
     <style>
         html, body, [class*="css"]  {
