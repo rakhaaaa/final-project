@@ -42,7 +42,7 @@ st.markdown("""
     </style>
 """, unsafe_allow_html=True)
 
-st.title("😄 Face Emotion & Identity Analyzer")
+st.title("🎭 Face Emotion & Identity Analyzer")
 st.markdown("""
     <div style='display: flex; align-items: center;'>
         <span class='emoji'>📸</span>
