@@ -4,7 +4,6 @@ Aplikasi interaktif berbasis Streamlit untuk:
 - Deteksi emosi dari wajah via **Upload Gambar** atau **Webcam Live**
 - Analisis usia, gender, dan ras (opsional)
 - Simpan histori analisis ke file log
-- Cocok untuk demo AI sederhana berbasis DeepFace
 
 ## 🚀 Fitur Utama
 - 📤 Upload Foto → Analisis Emosi
